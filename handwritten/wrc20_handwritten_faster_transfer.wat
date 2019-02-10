@@ -5,7 +5,6 @@
   (func $callDataCopy    (import "ethereum" "callDataCopy") (param i32 i32 i32))
   (func $storageLoad     (import "ethereum" "storageLoad") (param i32 i32))
   (func $storageStore    (import "ethereum" "storageStore") (param i32 i32))
-  (func $getTxOrigin     (import "ethereum" "getTxOrigin") (param i32))
   (func $getCaller       (import "ethereum" "getCaller") (param i32))
   (memory (export "memory") 1)
   (func (export "main")
