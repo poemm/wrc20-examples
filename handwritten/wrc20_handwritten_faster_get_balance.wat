@@ -7,8 +7,6 @@
   (func $storageStore    (import "ethereum" "storageStore") (param i32 i32))
   (func $getTxOrigin     (import "ethereum" "getTxOrigin") (param i32))
   (func $getCaller       (import "ethereum" "getCaller") (param i32))
-  (import "debug" "printStorageHex" (func $printStorageHex (param i32)))
-  (import "debug" "printMemHex" (func $printMemHex (param i32 i32)))
   (memory (export "memory") 1)
   (func (export "main")
     block
@@ -98,9 +96,6 @@
       i32.const 24
       i32.const 8
       call $callDataCopy
-      i32.const 64 ;;print
-      i32.const 32
-      call $printMemHex
       i32.const 64
       i64.load 
       call $i64.reverse_bytes
@@ -109,22 +104,12 @@
       i32.const 64
       call $storageLoad
       i32.const 64
-      i32.const 64 ;;print
-      i32.const 32
-      call $printMemHex
-      i32.const 0
-      call $printStorageHex
       i64.load 
       call $i64.reverse_bytes
       set_local 1
       i32.const 32	;;temporarily put recipient_balance into bytes 64-95, reverse 8 msb, put in local 2
       i32.const 64
       call $storageLoad
-      i32.const 64 ;;print
-      i32.const 32
-      call $printMemHex
-      i32.const 32
-      call $printStorageHex
       i32.const 64
       i64.load 
       call $i64.reverse_bytes
