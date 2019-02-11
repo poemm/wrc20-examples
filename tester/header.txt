@@ -18,8 +18,8 @@
          (import "ethereum" "storageStore" (func $storageStore (param i32 i32)))
          (import "ethereum" "call"         (func $call (param i64 i32 i32 i32 i32) (result i32)))
          (import "ethereum" "returnDataCopy" (func $returnDataCopy (param i32 i32 i32)))
-         (import "debug" "printStorageHex" (func $printStorageHex (param i32)))
-         (import "debug" "printMemHex" (func $printMemHex (param i32 i32)))
+         ;;(import "debug" "printStorageHex" (func $printStorageHex (param i32)))
+         ;;(import "debug" "printMemHex" (func $printMemHex (param i32 i32)))
          (memory 1)
 
          ;; memory looks like this
@@ -62,8 +62,8 @@
           (i32.store8 (i32.const 95) (i32.const 0))
           ;;                     pathOffset     valueOffset
           (call $storageStore (i32.const 64) (i32.const 120))
-          (call $printMemHex (i32.const 120) (i32.const 32))
-          (call $printStorageHex (i32.const 64))
+          ;;(call $printMemHex (i32.const 120) (i32.const 32))
+          ;;(call $printStorageHex (i32.const 64))
 
           ;; call the precompile at address b94...f0b and send value 0 Eth
           ;;                      gas           addrOffset     valOffset      dataOffset     dataLength
@@ -75,8 +75,8 @@
           (i32.store8 (i32.const 95) (i32.const 1))
           ;;                     pathOffset     valueOffset
           (call $storageStore (i32.const 64) (i32.const 184))
-          (call $printMemHex (i32.const 184) (i32.const 32))
-          (call $printStorageHex (i32.const 64))
+          ;;(call $printMemHex (i32.const 184) (i32.const 32))
+          ;;(call $printStorageHex (i32.const 64))
 
 
           ;; call the precompile at address b94...f0b and send value 0 Eth
@@ -89,8 +89,8 @@
           (i32.store8 (i32.const 95) (i32.const 2))
           ;;                     pathOffset     valueOffset
           (call $storageStore (i32.const 64) (i32.const 240))
-          (call $printMemHex (i32.const 240) (i32.const 32))
-          (call $printStorageHex (i32.const 64))
+          ;;(call $printMemHex (i32.const 240) (i32.const 32))
+          ;;(call $printStorageHex (i32.const 64))
 
 
           ;; call the precompile at address b94...f0b and send value 0 Eth
@@ -103,8 +103,8 @@
           (i32.store8 (i32.const 95) (i32.const 3))
           ;;                     pathOffset     valueOffset
           (call $storageStore (i32.const 64) (i32.const 304))
-          (call $printMemHex (i32.const 304) (i32.const 32))
-          (call $printStorageHex (i32.const 64))
+          ;;(call $printMemHex (i32.const 304) (i32.const 32))
+          ;;(call $printStorageHex (i32.const 64))
 
          )
         )
